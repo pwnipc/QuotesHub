@@ -17,7 +17,7 @@
           <br>
         </div>
         <div class="col-sm d-flex justify-content-center">
-          <p class="text-muted mt-5 mx-auto">Posted: {{quote.postdate}}</p>
+          <p class="text-muted mt-5 mx-auto">Posted: {{quote.postdate | timeAgo}}</p>
         </div>
         <div class="col-sm d-flex flex-column justify-content-around mx-auto">
           <button class="btn btn-sm btn-outline-primary"  (click)="viewQuote(i)"><i class="fa fa-eye"></i>  View Quote</button><br>
