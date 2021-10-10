@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
 
 @Component({
@@ -12,6 +12,7 @@ export class ListQuotesComponent implements OnInit {
     new Quote(1,"The Office","Michael Scott","Chalie","i am not superstitious just a little stitious",new Date(2020,2,20)),
     new Quote(2, "Life", "Elbert Hubbard", "Wizz","do not take life too seriously. you will never get out of it alive",new Date(2019,3,5))
   ];
+  
 
   viewQuote(index:number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;    
@@ -24,6 +25,13 @@ export class ListQuotesComponent implements OnInit {
   downvote(index:number){
     this.quotes[index].qdownvote += 1;
   }
+
+
+  deleteQuote(index:number){  
+    this.quotes.splice(index, 1);
+  }
+
+ 
 
   constructor() { }
 
