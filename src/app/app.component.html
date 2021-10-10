@@ -10,33 +10,5 @@
   </div>
   <!-- <div class="col-md-auto"> + New Quote</div> -->
 </div>
-<h1 class="text-center">Quotes Hub</h1>
-
-<div class="container">
-  <div id="quote-card" class="card border-primary border-right-0">
-    <div class="row">
-      <div class="col col-sm-2">
-        <img src="../assets/quote.png" alt="Quotes icon" height="90px"> 
-      </div>
-      <div class="col-sm">
-        <h4 class="d-inline" >Quote Title</h4>
-        <p>By: Chalie </p>
-        <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
-        <div class="d-flex justify-content-between">
-          <i class="text-primary fa fa-thumbs-up">Upvote </i> 
-          <i class="text-danger fa fa-thumbs-down">Downvote</i>
-        </div>
-        <br>
-      </div>
-      <div class="col-sm d-flex justify-content-center">
-        <p class="text-muted mt-4">Posted 20 minutes ago</p>
-      </div>
-      <div class="col-sm d-flex flex-column justify-content-around">
-        <button class="btn-sm btn-outline-primary"><i class="fa fa-eye"></i>  View Quote</button><br>
-        <button class="btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete Quote</button>
-      </div>
-
-    </div>
-  </div>
-</div>
+<h1 class="text-center">{{ title }}</h1>
+<app-list-quotes></app-list-quotes>
