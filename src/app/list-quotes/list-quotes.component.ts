@@ -9,15 +9,21 @@ import { Quote } from '../quote';
 export class ListQuotesComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1,"The Office","Michael Scott","Chalie","i am not superstitious just a little stitious",0,0,new Date(2020,2,20)),
-    new Quote(2, "Life", "Elbert Hubbard", "Wizz","do not take life too seriously. you will never get out of it alive",0,0,new Date(2019,3,5))
+    new Quote(1,"The Office","Michael Scott","Chalie","i am not superstitious just a little stitious",new Date(2020,2,20)),
+    new Quote(2, "Life", "Elbert Hubbard", "Wizz","do not take life too seriously. you will never get out of it alive",new Date(2019,3,5))
   ];
 
   viewQuote(index:number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;    
   }
+  
+  upvote(index:number){
+    this.quotes[index].qupvote += 1;
+  }
 
-
+  downvote(index:number){
+    this.quotes[index].qdownvote += 1;
+  }
 
   constructor() { }
 
