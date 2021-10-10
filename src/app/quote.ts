@@ -1,6 +1,10 @@
 export class Quote {
     showDescription!: boolean;
-    constructor(public qid: number, public qtitle: string, public qauthor: string, public qsubmitter:string, public qdescription: string, public qupvote: number, public qdownvote:number, public postdate: Date ){
+    qupvote!: number;
+    qdownvote!: number;
+    constructor(public qid: number, public qtitle: string, public qauthor: string, public qsubmitter:string, public qdescription: string,  public postdate: Date ){
         this.showDescription = false;
+        this.qupvote = 0;
+        this.qdownvote = 0;
     }
 }
