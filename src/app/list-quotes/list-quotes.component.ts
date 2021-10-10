@@ -13,7 +13,6 @@ export class ListQuotesComponent implements OnInit {
     new Quote(2, "Life", "Elbert Hubbard", "Wizz","do not take life too seriously. you will never get out of it alive",0,0,new Date(2019,3,5))
   ];
 
-
   viewQuote(index:number){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;    
   }
