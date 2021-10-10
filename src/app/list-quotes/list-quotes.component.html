@@ -21,7 +21,7 @@
         </div>
         <div class="col-sm d-flex flex-column justify-content-around mx-auto">
           <button class="btn btn-sm btn-outline-primary"  (click)="viewQuote(i)"><i class="fa fa-eye"></i>  View Quote</button><br>
-          <button class="btn btn-sm btn-outline-danger" ><i class="fa fa-trash"></i> Delete Quote</button>
+          <button *ngIf="quote.showDescription" class="btn btn-sm btn-outline-danger" (click)="deleteQuote(i)"><i class="fa fa-trash"></i> Delete Quote</button>
         </div>
   
       </div>
