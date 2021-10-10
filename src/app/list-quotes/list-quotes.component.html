@@ -11,8 +11,8 @@
           <app-quote-description *ngIf="quote.showDescription" [showDesc]="quote"></app-quote-description>
           <p>By: <span class="by">{{quote.qauthor}}</span> Submitted By: <span class="by">{{quote.qsubmitter}}</span> </p> 
           <div class="d-flex justify-content-around">
-            <i class="text-primary fa fa-thumbs-up">Upvote<span> {{quote.qupvote}}</span> </i> 
-            <i class="text-danger fa fa-thumbs-down">Downvote {{quote.qdownvote}} </i>
+            <i (click)="upvote(i)" class="text-primary fa fa-thumbs-up">Upvote<span> {{quote.qupvote}}</span> </i> 
+            <i (click)="downvote(i)" class="text-danger fa fa-thumbs-down">Downvote {{quote.qdownvote}} </i>
           </div>
           <br>
         </div>
@@ -21,7 +21,7 @@
         </div>
         <div class="col-sm d-flex flex-column justify-content-around mx-auto">
           <button class="btn btn-sm btn-outline-primary"  (click)="viewQuote(i)"><i class="fa fa-eye"></i>  View Quote</button><br>
-          <button class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i> Delete Quote</button>
+          <button class="btn btn-sm btn-outline-danger" ><i class="fa fa-trash"></i> Delete Quote</button>
         </div>
   
       </div>
