@@ -1,27 +1,66 @@
-<div class="container-fluid">
-    <h2 class="text-center">Post New Quote</h2>
-    <hr>
-    <form #quoteForm="ngForm" (ngSubmit)="addQuote()">
-        <div class="form-group">
-            <label for="name">Title</label>
-            <input type="text" required class="form-control" name="title" [(ngModel)]="newQuote.qtitle">  
-        </div>
-        <div class="form-group">
-            <label for="name">Author</label>
-            <input type="text" required class="form-control" name="author" [(ngModel)]="newQuote.qauthor">  
-        </div>
-        <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" required class="form-control" name="name" [(ngModel)]="newQuote.qsubmitter">  
-        </div>
-        <div class="form-group">
-  
-            <label for="description">Quote</label>
-            <textarea class="form-control" name="quote"  [(ngModel)]="newQuote.qdescription" rows="4" required></textarea>
-  
-        </div>
-        <button type="submit" class="btn btn-success">Post Quote</button> 
-    </form>
-  </div>
+<div class="d-flex">
+  <div class="">
 
-  
+    <div class="container-fluid">
+      <h2 class="text-center">Post New Quote</h2>
+      <hr>
+      <form #quoteForm="ngForm" (ngSubmit)="addQuote()">
+        <div class="form-group">
+          <label for="name">Title</label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="newQuote.qtitle"
+            placeholder="Enter Quote Title..." required>
+        </div>
+        <div class="form-group">
+          <label for="name">Author</label>
+          <input type="text" class="form-control" name="author" [(ngModel)]="newQuote.qauthor"
+            placeholder="Type Quote Author" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="newQuote.qsubmitter"
+            placeholder="Enter Your Name..." required>
+        </div>
+        <div class="form-group">
+
+          <label for="description">Quote</label>
+          <textarea class="form-control" name="quote" [(ngModel)]="newQuote.qdescription" rows="4"
+            placeholder="Type Quote message..." required></textarea>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Post Quote</button>
+      </form>
+    </div>
+
+
+
+  </div>
+  <div>
+    <div class="col">
+      <div class="container-fluid">
+        <h2 class="text-center">Typing...</h2>
+        <hr>
+        <form #quoteForm="ngForm" (ngSubmit)="cancelQuote(false)">
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" name="title" value="{{newQuote.qtitle}}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="name">Author</label>
+            <input type="text" class="form-control" name="author" value="{{newQuote.qauthor}}" readonly>
+          </div>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" name="name" value="{{newQuote.qsubmitter}}" readonly>
+          </div>
+          <div class="form-group">
+
+            <label for="description">Quote</label>
+            <textarea class="form-control" name="quote" value="{{newQuote.qdescription}}" rows="4" readonly></textarea>
+
+          </div>
+          <button type="submit" class="btn btn-danger">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
