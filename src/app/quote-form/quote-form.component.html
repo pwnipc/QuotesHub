@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <h2 class="text-center">Post New Quote</h2>
+    <hr>
+    <form #quoteForm="ngForm" (ngSubmit)="addQuote()">
+        <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" required class="form-control" name="title" [(ngModel)]="newQuote.qtitle">  
+        </div>
+        <div class="form-group">
+            <label for="name">Author</label>
+            <input type="text" required class="form-control" name="author" [(ngModel)]="newQuote.qauthor">  
+        </div>
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" required class="form-control" name="name" [(ngModel)]="newQuote.qsubmitter">  
+        </div>
+        <div class="form-group">
+  
+            <label for="description">Quote</label>
+            <textarea class="form-control" name="quote"  [(ngModel)]="newQuote.qdescription" rows="4" required></textarea>
+  
+        </div>
+        <button type="submit" class="btn btn-success">Post Quote</button> 
+    </form>
+  </div>
+
+  
