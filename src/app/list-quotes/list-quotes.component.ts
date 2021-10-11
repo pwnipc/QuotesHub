@@ -8,7 +8,7 @@ import { Quote } from '../quote';
 })
 export class ListQuotesComponent implements OnInit {
   peep:boolean = false;
-  mostVote! : number;
+  mostVote : number = 0;
   master! : number;
 
   quotes: Quote[] = [
@@ -43,6 +43,18 @@ export class ListQuotesComponent implements OnInit {
   twendekazi(){
     this.peep = !this.peep;
   }
+
+  masterUpvote(){
+    for(let i = 0; i < this.quotes.length; i++ ){
+      if(this.quotes[i].qupvote > this.mostVote){
+        this.mostVote = this.quotes[i].qupvote;
+        this.master = i;
+        this.quotes[this.master].highestVote = true;
+      }
+
+    }
+  }
+
 
   constructor() { }
 
