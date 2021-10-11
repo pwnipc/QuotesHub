@@ -7,6 +7,9 @@ import { Quote } from '../quote';
   styleUrls: ['./list-quotes.component.css']
 })
 export class ListQuotesComponent implements OnInit {
+  peep:boolean = false;
+  mostVote! : number;
+  master! : number;
 
   quotes: Quote[] = [
     new Quote(1,"The Office","Michael Scott","Chalie","i am not superstitious just a little stitious",new Date(2020,2,20)),
@@ -31,7 +34,15 @@ export class ListQuotesComponent implements OnInit {
     this.quotes.splice(index, 1);
   }
 
- 
+  addQuote(theQuote:Quote){
+    this.quotes.push(theQuote)
+    this.peep = false;
+
+  }
+
+  twendekazi(){
+    this.peep = !this.peep;
+  }
 
   constructor() { }
 
