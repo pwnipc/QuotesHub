@@ -20,7 +20,7 @@
     
     <div class="row">
       <div class="col col-sm-2">
-        <img src="../assets/quote.png" alt="Quotes icon" height="90px"> 
+        <img src="assets/quote.png" alt="Quotes icon" height="90px"> 
       </div>
       <div class="col-sm mt-4 mx-auto">
         <h5 class="d-inline" > <strong>{{quote.qtitle}}</strong> </h5>
@@ -28,7 +28,7 @@
         <app-quote-description *ngIf="quote.showDescription" [showDesc]="quote"></app-quote-description>
         <p>Author : <span class="by">{{quote.qauthor}}</span>  </p> 
         <div class="d-flex">
-          <i (click)="upvote(i)" class="text-primary fa fa-thumbs-up">Upvote  <span> {{quote.qupvote}}</span> </i> 
+          <i (click)="upvote(i); masterUpvote()" class="text-primary fa fa-thumbs-up">Upvote  <span> {{quote.qupvote}}</span> </i> 
           <i (click)="downvote(i)" class="text-danger fa fa-thumbs-down">Downvote {{quote.qdownvote}} </i>
         </div>
         <br>
