@@ -10,7 +10,6 @@ export class ListQuotesComponent implements OnInit {
   peep:boolean = false;
   mostVote : number = 0;
   master! : number;
-  viewBtn!:string;
 
   quotes: Quote[] = [
     new Quote(4,"Infinity","Albert Einstein","Genius","Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.",new Date(1950,8,14)),
@@ -22,12 +21,7 @@ export class ListQuotesComponent implements OnInit {
   
 
   viewQuote(index:number){
-    this.quotes[index].showDescription = !this.quotes[index].showDescription;   
-    if(this.quotes[index].showDescription == true){
-      this.viewBtn = "Hide Quote";
-    }else{
-      this.viewBtn = "View Quote";
-    }
+    this.quotes[index].showDescription = !this.quotes[index].showDescription; 
   }
   
   upvote(index:number){
@@ -56,18 +50,14 @@ export class ListQuotesComponent implements OnInit {
 
   masterUpvote(){
     for(let i = 0; i < this.quotes.length; i++ ){
-      if(i>1 && this.quotes[i].qupvote > this.mostVote){
-        this.quotes[i-1].highestVote = false;
+      if(this.quotes[i].qupvote > this.mostVote){
         this.mostVote = this.quotes[i].qupvote;
         this.master = i;
         this.quotes[i].highestVote = true;
-      }else{
-              if(this.quotes[i].qupvote > this.mostVote){
-        this.mostVote = this.quotes[i].qupvote;
-        this.master = i;
-        this.quotes[i].highestVote = true;
-              }
-        
+        console.log(this.quotes[i].highestVote)       
+        console.log(this.quotes[i - 1].highestVote)
+      }else{  
+        this.quotes[i].highestVote = false;      
       }
 
     }

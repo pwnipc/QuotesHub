@@ -1,6 +1,6 @@
 <div class="row d-flex justify-content-center">
-  <div class="col-2">
-    <button class="btn btn-primary" (click)="twendekazi()">+ New Quote</button>
+  <div class="col-1">
+    <button class="btn btn-primary" (click)="twendekazi()">+ Post</button>
   </div>
   <div>
 
@@ -12,13 +12,12 @@
       </div>
       <div>
 
-
-
         <div class="container" *ngFor="let quote of quotes; let i = index">
-          <div id="quote-card" class="card border-primary" *ngIf="quote.highestVote" appQuotehighlight>
+          <div id="quote-card" class="card "  [ngClass]="{'border-danger': quote.highestVote && quote.qupvote > 0  }">
+            <p class="text-danger pl-1" *ngIf="quote.highestVote && quote.qupvote > 0"><strong> most voted <i class="fa fa-star"></i></strong></p>
             <div class="row">
               <div class="col col-sm-2">
-                <img src="assets/quote.png" alt="Quotes icon" height="90px">
+                <img class="rounded-circle m-4" src="assets/quote.png" alt="Quotes icon" height="90px">
               </div>
               <div class="col-sm mt-4 mx-auto">
                 <h5 class="d-inline"> <strong>{{quote.qtitle}}</strong> </h5>
@@ -37,41 +36,7 @@
                   {{quote.postdate | timeAgo}}</p>
               </div>
               <div class="col-sm d-flex flex-column justify-content-around mx-auto">
-                <button class="btn btn-sm btn-outline-primary" (click)="viewQuote(i)"><i class="fa fa-eye"></i> {{viewBtn}} </button><br>
-                <button *ngIf="quote.showDescription" class="btn btn-sm btn-outline-danger" (click)="deleteQuote(i)"><i
-                    class="fa fa-trash"></i> Delete Quote</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="">
-            <nav class="navbar navbar-light bg-light">
-            </nav>
-          </div>
-
-          <div id="quote-card" class="card border-primary">
-            <div class="row">
-              <div class="col col-sm-2">
-                <img src="assets/quote.png" alt="Quotes icon" height="90px">
-              </div>
-              <div class="col-sm mt-4 mx-auto">
-                <h5 class="d-inline"> <strong>{{quote.qtitle}}</strong> </h5>
-                <br>
-                <app-quote-description *ngIf="quote.showDescription" [showDesc]="quote"></app-quote-description>
-                <p>Author : <span class="by">{{quote.qauthor}}</span> </p>
-                <div class="d-flex">
-                  <i (click)="upvote(i); masterUpvote()" class="text-primary fa fa-thumbs-up">Upvote <span>
-                      {{quote.qupvote}}</span> </i>
-                  <i (click)="downvote(i)" class="text-danger fa fa-thumbs-down">Downvote {{quote.qdownvote}} </i>
-                </div>
-                <br>
-              </div>
-              <div class="col-sm d-flex justify-content-center">
-                <p class="text-muted mt-5 mx-auto">Posted By: <span class="by">{{quote.qsubmitter}}</span>
-                  {{quote.postdate | timeAgo}}</p>
-              </div>
-              <div class="col-sm d-flex flex-column justify-content-around mx-auto">
-                <button class="btn btn-sm btn-outline-primary" (click)="viewQuote(i)"><i class="fa fa-eye"></i> {{viewBtn}}</button><br>
+                <button class="btn btn-sm btn-outline-primary" (click)="viewQuote(i)"><i class="fa fa-eye"></i> View Quote </button><br>
                 <button *ngIf="quote.showDescription" class="btn btn-sm btn-outline-danger" (click)="deleteQuote(i)"><i
                     class="fa fa-trash"></i> Delete Quote</button>
               </div>
